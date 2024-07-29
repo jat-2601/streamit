@@ -72,8 +72,9 @@ if file_uploader is not None:
             return logistic_regression_model
 
 
-            logistic_model = logistic_model(x_train, y_train)
-            st.write("Logistic Regression Accuracy:",
+        logistic_model = logistic_model(x_train, y_train)
+        
+        st.write("Logistic Regression Accuracy:",
                      str(logistic_model.score(x_test, y_test)*100)+"%")
 
 
