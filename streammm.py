@@ -13,7 +13,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor as vi
 import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
-from ydata_profiling import profile_report
+#from ydata_profiling import profile_report
 import streamlit as st
 
 # machine learning
