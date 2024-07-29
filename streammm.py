@@ -121,3 +121,13 @@ if file_uploader is not None:
         plt.tight_layout()
         plt.savefig('image.png')
         st.pyplot(fig)
+
+    if selected_model == 'Support Vector Classifier':
+        def svc(x, y):
+            svc = SVC()
+            svc = svc.fit(x,y)
+            return svc
+        svc = svc(x_train, y_train)
+
+        st.write("Support Vector Classifier model accuracy:",
+                 str(svc.score(x_test, y_test)*100)+"%")
