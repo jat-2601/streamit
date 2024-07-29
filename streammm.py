@@ -101,6 +101,10 @@ if file_uploader is not None:
                  str(rf_classifier.score(x_test, y_test)*100)+"%")
 
     if selected_model == 'Decision Tree Classifier':
+        """
+        Use gini impurity by default and a low value for ccp alpha as possible,
+        if going to test with random number for better accuracy.
+        """
         def dtree(x, y):
             split_criteria = ['gini', 'entropy']
             split_criteria = st.selectbox("Select the tree splitting criteria:",split_criteria)
