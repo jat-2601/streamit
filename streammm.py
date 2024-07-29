@@ -7,7 +7,7 @@ import numpy as np
 import streamlit
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from statsmodels.stats.outliers_influence import variance_inflation_factor as vif
+#from statsmodels.stats.outliers_influence import variance_inflation_factor as vif
 
 # data visualization
 import plotly.express as px
