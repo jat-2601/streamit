@@ -26,13 +26,13 @@ from sklearn.ensemble import StackingClassifier, BaggingClassifier
 from sklearn.impute._knn import KNNImputer
 from sklearn.ensemble import RandomForestClassifier
 
-file_uploader = st.file_uploader("Upload your dataset:")
+file_uploader = st.file_uploader("Upload your dataset to train the machine models upon:")
 
 # importing the dataset from the user
 if file_uploader is not None:
     data = pd.read_csv(file_uploader)
-    st.title("Sample data")
-    st.write(data.head(10))
+    st.title("Dataset Imported")
+    st.write(data)
 
 
     # FUNCTION TO IMPUTE ZEROES WITH MEAN OF THE COLUMN
@@ -54,18 +54,27 @@ if file_uploader is not None:
                                                         random_state=10)
 
     st.title("Model input features")
+    """
+    Input features considered to train the model.
+    """
     st.write(x_train)
 
     st.title("Model training labels")
+    """
+    Labels for the training dataset.
+    """
     st.write(y_train)
 
     # dropdown menu
     model_options = ['Logistic Regression', 'KNN - Classifier',
                      'Decision Tree Classifier', 'Random Forest Classifier', 'Support Vector Classifier']
-    selected_model = st.selectbox("Select a model", model_options)
+    selected_model = st.selectbox("Select a model to train", model_options)
 
     # training the logistic regression model
     if selected_model == 'Logistic Regression':
+        """
+        Logistic regression where the l1_ratio by default is 0.5 to avoid overfitting.
+        """
         def logistic_model(x,y):
             logistic_regression_model = LogisticRegression(l1_ratio=0.5)
             logistic_regression_model = logistic_regression_model.fit(x, y)
