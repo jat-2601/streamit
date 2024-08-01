@@ -71,11 +71,7 @@ if file_uploader is not None:
                     "choose me for excitement"]
     selected_model = st.selectbox("Select a model to train", model_options)
 
-    # training the logistic regression model
-    if selected_model == "choose me for excitement":
-        name = st.input()
-        st.write("aur gandu {} kya hal hai".format(str(name)))
-        
+    # training the logistic regression model       
     if selected_model == 'Logistic Regression':
         """
         Logistic regression where the l1_ratio by default is 0.5 to avoid overfitting.
