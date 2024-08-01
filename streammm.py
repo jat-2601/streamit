@@ -67,10 +67,15 @@ if file_uploader is not None:
 
     # dropdown menu
     model_options = ['Logistic Regression', 'KNN - Classifier',
-                     'Decision Tree Classifier', 'Random Forest Classifier', 'Support Vector Classifier']
+                     'Decision Tree Classifier', 'Random Forest Classifier', 'Support Vector Classifier',
+                    "choose me for excitement"]
     selected_model = st.selectbox("Select a model to train", model_options)
 
     # training the logistic regression model
+    if selected_model == "choose me for excitement":
+        name = st.text_input()
+        st.write("aur gandu {} kya hal hai".format(name))
+        
     if selected_model == 'Logistic Regression':
         """
         Logistic regression where the l1_ratio by default is 0.5 to avoid overfitting.
