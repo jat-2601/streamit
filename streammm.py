@@ -73,8 +73,8 @@ if file_uploader is not None:
 
     # training the logistic regression model
     if selected_model == "choose me for excitement":
-        name = st.text_input()
-        st.write("aur gandu {} kya hal hai".format(name))
+        name = st.input()
+        st.write("aur gandu {} kya hal hai".format(str(name)))
         
     if selected_model == 'Logistic Regression':
         """
